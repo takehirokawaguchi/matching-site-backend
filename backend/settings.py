@@ -20,7 +20,7 @@ AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ["thriving-pegasus-f99688.netlify.app", "127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = ['https://thriving-pegasus-f99688.netlify.app/login', 'https://127.0.0.1']
