@@ -23,20 +23,20 @@ AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "matching-site-backend.onrender.com"
-    "thriving-pegasus-f99688.netlify.app",
-    "127.0.0.1"
+    'matching-site-backend.onrender.com',
+    'thriving-pegasus-f99688.netlify.app',
+    '127.0.0.1',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'http://matching-site-backend.onrender.com'
     'http://thriving-pegasus-f99688.netlify.app',
-    'http://127.0.0.1'
+    'http://127.0.0.1',
 ]
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 # 開発用
 CORS_ALLOW_ORIGINS = [
-    'http://thriving-pegasus-f99688.netlify.app'
+    'http://thriving-pegasus-f99688.netlify.app',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
