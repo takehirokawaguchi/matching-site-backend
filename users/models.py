@@ -16,7 +16,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['username', 'role']
 
     # ユーザー作成やスーパーユーザー作成などのカスタムロジックを実装
     objects = CustomUserManager()
