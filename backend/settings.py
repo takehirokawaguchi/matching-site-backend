@@ -24,11 +24,13 @@ DEBUG = True
 
 # 本番用
 ALLOWED_HOSTS = [
+    'localhost',
     'matching-site-backend-production.up.railway.app',
     '127.0.0.1'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
     'https://matching-site-backend-production.up.railway.app',
     'https://127.0.0.1'
 ]
