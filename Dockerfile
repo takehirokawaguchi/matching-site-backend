@@ -33,7 +33,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . /app/
 
-ENV WSGIPATH=/app/backend/backend/wsgi.py
-
 # 本番環境用
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--log-level", "info", "$WSGIPATH:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--log-level", "info", "app.backend.backend.wsgi:application"]
