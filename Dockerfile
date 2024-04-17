@@ -32,7 +32,7 @@ COPY ./requirements.txt /app/backend/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
-COPY . ./app/
+COPY . /app/backend/
 
 # RUN chmod a+x build.sh
 # ENTRYPOINT [ "bash", "./build.sh" ]
