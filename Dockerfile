@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # 本番環境用
-CMD python manage.py runserver 0.0.0.0:8000
+CMD CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--log-level", "info", "/app/backend/manage.py", "runserver", "0.0.0.0:8000"]
