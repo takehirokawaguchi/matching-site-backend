@@ -21,8 +21,18 @@ AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# 本番用
+ALLOWED_HOSTS = [
+    'matching-site-backend-production.up.railway.app'
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://matching-site-backend-production.up.railway.app'
+]
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+
+# 開発用
 CORS_ALLOW_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
