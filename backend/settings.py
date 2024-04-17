@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
 ]
 CSRF_TRUSTED_ORIGINS = [
     'http://matching-site-backend.onrender.com',
+    'https://matching-site-backend.onrender.com',
     'http://thriving-pegasus-f99688.netlify.app',
     'http://127.0.0.1',
 ]
