@@ -16,7 +16,7 @@
 # COPY . /app/
 
 # 本番環境用
-# Base image
+#Base image
 FROM python:3.10
 
 # Set environment variables
@@ -34,4 +34,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # 本番環境用
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--log-level", "info", "backend.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "--log-level", "debug", "backend.wsgi:application"]
