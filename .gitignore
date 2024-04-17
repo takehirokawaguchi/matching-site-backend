@@ -2,5 +2,5 @@ myvenv
 .env
 db.sqlite3
 app/__pycache__/
-app/migrations/__pycache__/
+users/migrations/__pycache__/
 matchingappapi/__pycache__/

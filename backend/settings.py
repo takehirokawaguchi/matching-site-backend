@@ -21,22 +21,22 @@ AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = os.environ.get('DEBUG', 'False').lower() == "True"
+DEBUG = os.environ.get('DEBUG', True)
 
 # 本番用
 ALLOWED_HOSTS = [
     'localhost',
-    'matching-site-backend-production.up.railway.app',
+    '.onrender.com',
     '127.0.0.1'
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost',
-    'https://matching-site-backend-production.up.railway.app',
-    'https://127.0.0.1'
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'http://localhost',
+#     'https://matching-site-backend-production.up.railway.app',
+#     'https://127.0.0.1'
+# ]
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+# SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
 # 開発用
 CORS_ALLOW_ORIGINS = [
@@ -66,6 +66,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,6 +78,7 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# 開発環境時はCORSを無視
 if DEBUG is True:
     CORS_ALLOW_ALL_ORIGINS = True
 

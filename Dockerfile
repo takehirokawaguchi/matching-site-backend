@@ -31,9 +31,11 @@ COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
-COPY . .
+COPY . ./app
 
 # Expose port
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+ENTRYPOINT ["gunicorn", "backend.wsgi"]
+
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
