@@ -1,5 +1,4 @@
 from rest_framework import serializers, exceptions
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate
 from djoser.serializers import UserCreateSerializer

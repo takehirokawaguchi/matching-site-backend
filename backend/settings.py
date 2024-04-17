@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
+import dj_database_url
 
 # read secret_key from .env
 load_dotenv()
@@ -23,11 +24,13 @@ DEBUG = True
 
 # 本番用
 ALLOWED_HOSTS = [
-    'matching-site-backend-production.up.railway.app'
+    'matching-site-backend-production.up.railway.app',
+    '127.0.0.1'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://matching-site-backend-production.up.railway.app'
+    'https://matching-site-backend-production.up.railway.app',
+    'https://127.0.0.1'
 ]
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
@@ -138,6 +141,9 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # 本番環境用
 # DATABASES = {
