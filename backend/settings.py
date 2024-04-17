@@ -19,6 +19,7 @@ AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_REGION_NAME = os.getenv('AWS_S3_REGION_NAME')
 AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 
+# 開発用
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -35,7 +36,6 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
-# 開発用
 CORS_ALLOW_ORIGINS = [
     'http://thriving-pegasus-f99688.netlify.app',
     'http://localhost:3000',
@@ -77,6 +77,9 @@ MIDDLEWARE = [
 CORS_ALLOW_CREDENTIALS = True
 
 # 開発環境時はCORSを無視
+# if DEBUG is True:
+#     CORS_ALLOW_ALL_ORIGINS = True
+
 if DEBUG is True:
     CORS_ALLOW_ALL_ORIGINS = True
 
