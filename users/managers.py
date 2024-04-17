@@ -12,7 +12,6 @@ class CustomUserManager(BaseUserManager):
             raise ValueError('有効なメールアドレスを入力してください')
 
     def create_user(self, username, email, password, **extra_fields):
-        print(username, email, password, extra_fields)
         if not username:
             raise ValueError('ユーザー名を入力してください')
         
