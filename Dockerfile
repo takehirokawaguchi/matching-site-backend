@@ -36,6 +36,6 @@ COPY . ./app/
 
 # RUN chmod a+x build.sh
 # ENTRYPOINT [ "bash", "./build.sh" ]
-CMD [ "gunicorn", "backend.wsgi" ]
+# CMD [ "gunicorn", "backend.wsgi" ]
 
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
