@@ -22,12 +22,21 @@ AWS_S3_ENDPOINT_URL = os.getenv('AWS_S3_ENDPOINT_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["thriving-pegasus-f99688.netlify.app", "127.0.0.1"]
-CSRF_TRUSTED_ORIGINS = ['https://thriving-pegasus-f99688.netlify.app/login', 'https://127.0.0.1']
+ALLOWED_HOSTS = [
+    'matching-site-backend.onrender.com'
+    'thriving-pegasus-f99688.netlify.app',
+    '127.0.0.1'
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://matching-site-backend.onrender.com'
+    'https://thriving-pegasus-f99688.netlify.app',
+    'https://127.0.0.1'
+]
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 # 開発用
 CORS_ALLOW_ORIGINS = [
+    'https://thriving-pegasus-f99688.netlify.app'
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
