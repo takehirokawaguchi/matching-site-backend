@@ -25,19 +25,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'matching-site-backend.onrender.com',
-    'thriving-pegasus-f99688.netlify.app',
+    'career-product.netlify.app/',
     '127.0.0.1',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'http://matching-site-backend.onrender.com',
     'https://matching-site-backend.onrender.com',
-    'http://thriving-pegasus-f99688.netlify.app',
+    'https://career-product.netlify.app/',
     'http://127.0.0.1',
 ]
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 CORS_ALLOW_ORIGINS = [
-    'http://thriving-pegasus-f99688.netlify.app',
+    'https://career-product.netlify.app/',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
