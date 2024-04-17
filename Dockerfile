@@ -28,11 +28,14 @@ WORKDIR /app
 
 # Install dependencies
 COPY ./requirements.txt /app/
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY . ./app
 
-ENTRYPOINT ["gunicorn", "app.backend.wsgi"]
+RUN chmod a+x build.sh
+ENTRYPOINT [ "bash", "./build.sh" ]
+CMD [ "gunicorn", "backend.wsgi:application" ]
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
