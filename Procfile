@@ -1,1 +1,1 @@
-web: gunicorn backend.wsgi --log-file -
+web: docker-compose up -d
