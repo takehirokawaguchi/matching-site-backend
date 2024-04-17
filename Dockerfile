@@ -1,3 +1,21 @@
+# # Base image
+# FROM python:3.10
+
+# # Set environment variables
+# ENV PYTHONDONTWRITEBYTECODE 1
+# ENV PYTHONUNBUFFERED 1
+
+# # Set work directory
+# WORKDIR /app/backend
+
+# # Install dependencies
+# COPY ./requirements.txt /app/backend/
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# # Copy project
+# COPY . /app/
+
+# 本番環境用
 # Base image
 FROM python:3.10
 
@@ -6,10 +24,10 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Set work directory
-WORKDIR /app/backend
+WORKDIR /app
 
 # Install dependencies
-COPY ./requirements.txt /app/backend/
+COPY ./requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
